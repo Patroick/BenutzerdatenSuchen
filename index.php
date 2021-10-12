@@ -22,30 +22,28 @@
         <form id="form_daten"
               action="index.php"
               method="post">
-            <div class="row row-cols-lg-auto g-3">
+            <div class="row row-cols-lg-auto g-2">
 
+                <label class="pb-2 col-form-label "
+                       for="search">Suche:</label>
                 <div class="col-sm-4 form-group">
-                    <label class="pb-2 col-form-label "
-                           for="search">Suche:</label>
-
-
                     <input type="text"
                            name="search"
                            class="form-control"
                            required />
-
-                    <div class="col-sm-3 mb-3 d-grid">
-                        <input type="submit"
-                               name="submit"
-                               class="btn btn-primary btn-block"
-                               value="Speichern">
-                    </div>
-
-                    <div class="col-sm-3 mb-3 d-grid">
-                        <a href="index.php"
-                           class="btn btn-secondary btn-block">Löschen</a>
-                    </div>
                 </div>
+                <div class="col-sm-3 mb-3 d-grid">
+                    <input type="submit"
+                           name="submit"
+                           class="btn btn-primary btn-block"
+                           value="Speichern">
+                </div>
+
+                <div class="col-sm-3 mb-3 d-grid">
+                    <a href="index.php"
+                       class="btn btn-secondary btn-block">Löschen</a>
+                </div>
+
             </div>
         </form>
 
