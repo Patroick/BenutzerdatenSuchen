@@ -13,12 +13,41 @@
           integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
           crossorigin="anonymous">
     <title>Benutzerdaten Suchen</title>
-    <script type="text/javascript"
-            src="js/index.js"></script>
 
 </head>
 
 <body>
     <div class="container">
+        <h1>Benutzerdaten anzeigen</h1>
+        <form id="form_daten"
+              action="index.php"
+              method="post">
+            <div class="row row-cols-lg-auto g-3">
+
+                <div class="col-sm-4 form-group">
+                    <label class="pb-2 col-form-label "
+                           for="search">Suche:</label>
+
+
+                    <input type="text"
+                           name="search"
+                           class="form-control"
+                           required />
+
+                    <div class="col-sm-3 mb-3 d-grid">
+                        <input type="submit"
+                               name="submit"
+                               class="btn btn-primary btn-block"
+                               value="Speichern">
+                    </div>
+
+                    <div class="col-sm-3 mb-3 d-grid">
+                        <a href="index.php"
+                           class="btn btn-secondary btn-block">Löschen</a>
+                    </div>
+                </div>
+            </div>
+        </form>
+
     </div>
 </body>
