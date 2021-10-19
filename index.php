@@ -16,6 +16,14 @@
 
 </head>
 
+
+<?php
+
+include 'userdata.php';
+
+
+?>
+
 <body>
     <div class="container">
         <h1 class="mt-5 mb-3">Benutzerdaten anzeigen</h1>
