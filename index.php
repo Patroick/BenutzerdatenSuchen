@@ -19,9 +19,6 @@
 
 <?php
 
-include 'userdata.php';
-
-
 ?>
 
 <body>
@@ -62,6 +59,13 @@ include 'userdata.php';
                     <th scope="col">Geburtsdatum</th>
                 </tr>
                 </thead>
+                <tbody id="tableBodyData">
+
+                <?php
+
+                ?>
+
+                </tbody>
 
             </table>
         </form>
