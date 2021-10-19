@@ -18,13 +18,13 @@
 
 <body>
     <div class="container">
-        <h1>Benutzerdaten anzeigen</h1>
+        <h1 class="mt-5 mb-3">Benutzerdaten anzeigen</h1>
         <form id="form_daten"
               action="index.php"
               method="post">
-            <div class="row row-cols-lg-auto g-2">
+            <div class="row row-cols-lg-auto g-3">
 
-                <label class="pb-2 col-form-label "
+                <label class="pb-2 col-form-label"
                        for="search">Suche:</label>
                 <div class="col-sm-4 form-group">
                     <input type="text"
@@ -34,9 +34,9 @@
                 </div>
                 <div class="col-sm-3 mb-3 d-grid">
                     <input type="submit"
-                           name="submit"
+                           name="searchbtn"
                            class="btn btn-primary btn-block"
-                           value="Speichern">
+                           value="Suche">
                 </div>
 
                 <div class="col-sm-3 mb-3 d-grid">
@@ -45,6 +45,17 @@
                 </div>
 
             </div>
+
+            <table class="table table-striped">
+                <thead class="thead-light">
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">E-Mail</th>
+                    <th scope="col">Geburtsdatum</th>
+                </tr>
+                </thead>
+
+            </table>
         </form>
 
     </div>
