@@ -65,7 +65,12 @@ $search = isset($_POST['search']) ? $_POST['search'] : "";;
                 require "lib/func.inc.php";
                 if (isset($_POST['search']) && $_POST['search'] != "") {
                     printAllData(getFilteredData($_POST['search']));
-                } else {
+                }
+                elseif (isset($_POST['search']) && $_POST['search'] == "") {
+                    echo "<div class='alert alert-danger'>" . "Bitte machen Sie eine Eingabe zum Suchen!". "</div>";
+                    printAllData(getAllData());
+                }
+                else {
                     printAllData(getAllData());
                 }
                 ?>
