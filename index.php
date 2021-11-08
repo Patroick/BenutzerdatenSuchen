@@ -33,6 +33,7 @@ $search = isset($_POST['search']) ? $_POST['search'] : "";;
                 <div class="col-sm-4 form-group">
                     <input type="text"
                            name="search"
+
                            value="<?= htmlspecialchars($search) ?>"
                            class="form-control"
                             />
@@ -53,6 +54,7 @@ $search = isset($_POST['search']) ? $_POST['search'] : "";;
 
             <table class="table table-striped">
                 <thead class="thead-light">
+
                 <tr>
                     <th scope="col">Name</th>
                     <th scope="col">E-Mail</th>

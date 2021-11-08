@@ -25,53 +25,52 @@
 
     <div class="container">
         <h1 class="mt-5 mb-3">Benutzerdetails</h1>
-        <form action="index.php" method="post"></form>
+        <form action="index.php"
+              method="post"></form>
         <?php
-        echo "<a class='btn btn-primary btn-block' href=\"index.php\">zurück</a>"
+        echo "<a class='nav-link' href=\"index.php\">zurück</a>"
         ?>
         </form>
         <table class="table">
-        <tbody>
+            <tbody>
 
-            <?php
+                <?php
             if (!is_numeric($id['id'])) {
                 echo "<div class='alert alert-danger'>" . "ungültige ID" . "</div>";
-            } else {
+            } else { ?>
 
-                echo "<tr>";
-                echo "<td>Vorname</th>";
-                echo "<td>" . getDataPerId($id['id'])['firstname'] . "</th>";
-                echo "</tr>";
+                <tr>
+                <td>Vorname</th>
+                <td><?php echo getDataPerId($id['id'])['firstname']?></th>
+                </tr>
 
-                echo "<tr>";
-                echo "<td>Nachname</th>";
-                echo "<td>" . getDataPerId($id['id'])['lastname'] . "</th>";
-                echo "</tr>";
+                <tr>
+                <td>Nachname</th>
+                <td> <?php echo getDataPerId($id['id'])['lastname'] ?> </th>
+                </tr>
 
-                echo "<tr>";
-                echo "<td>Geburtsdatum</th>";
-                echo "<td>" . date("d.m.Y", strtotime(getDataPerId($id['id'])['birthdate'])) . "</th>";
-                echo "</tr>";
+                <tr>
+                <td>Geburtsdatum</th>
+                <td><?php echo date("d.m.Y", strtotime(getDataPerId($id['id'])['birthdate'])) ?> </th>
+                </tr>
 
-                echo "<tr>";
-                echo "<td>E-Mail</th>";
-                echo "<td>" . getDataPerId($id['id'])['email'] . "</th>";
-                echo "</tr>";
+                <tr>
+                <td>E-Mail</th>
+                <td><?php echo getDataPerId($id['id'])['email'] ?></th>
+                </tr>
 
-                echo "<tr>";
-                echo "<td>Telefon</th>";
-                echo "<td>" . getDataPerId($id['id'])['phone'] . "</th>";
-                echo "</tr>";
+                <tr>
+                <td>Telefon</th>
+                <td><?php echo getDataPerId($id['id'])['phone'] ?></th>
+                </tr>
 
-                echo "<tr>";
-                echo "<td>Straße</th>";
-                echo "<td>" . getDataPerId($id['id'])['street'] . "</th>";
-                echo "</tr>";
+                <tr>
+                <td>Straße</th>
+                <td><?php echo getDataPerId($id['id'])['street'] ?></th>
+                </tr>
 
-            }
-            ?>
-        </tbody>
+            <?php } ?>
+            </tbody>
         </table>
     </div>
-    </body>
-    </html>
+</body>
