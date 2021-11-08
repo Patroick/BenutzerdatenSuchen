@@ -33,7 +33,7 @@ $suche = isset($_POST['search']) ? $_POST['search'] : "";;
                 <div class="col-sm-4 form-group">
                     <input type="text"
                            name="search"
-                           value="<?= htmlspecialchars($suche) ?>"
+                           value="<?= htmlspecialchars($search) ?>"
                            class="form-control"
                             />
                 </div>
