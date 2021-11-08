@@ -17,7 +17,7 @@
 </head>
 
 <?php
-$suche = isset($_POST['search']) ? $_POST['search'] : "";;
+$search = isset($_POST['search']) ? $_POST['search'] : "";;
 ?>
 
 <body>
