@@ -16,27 +16,33 @@
 
 </head>
 
+<?php
+$search = isset($_POST['search']) ? $_POST['search'] : "";;
+?>
+
 <body>
     <div class="container">
-        <h1>Benutzerdaten anzeigen</h1>
+        <h1 class="mt-5 mb-3">Benutzerdaten anzeigen</h1>
         <form id="form_daten"
               action="index.php"
               method="post">
-            <div class="row row-cols-lg-auto g-2">
+            <div class="row row-cols-lg-auto g-3">
 
-                <label class="pb-2 col-form-label "
+                <label class="pb-2 col-form-label"
                        for="search">Suche:</label>
                 <div class="col-sm-4 form-group">
                     <input type="text"
                            name="search"
-                           value="<?= htmlspecialchars($suche) ?>"
-                           class="form-control" />
+
+                           value="<?= htmlspecialchars($search) ?>"
+                           class="form-control"
+                            />
                 </div>
                 <div class="col-sm-3 mb-3 d-grid">
                     <input type="submit"
-                           name="submit"
+                           name="searchbtn"
                            class="btn btn-primary btn-block"
-                           value="Speichern">
+                           value="Suchen">
                 </div>
 
                 <div class="col-sm-3 mb-3 d-grid">
@@ -48,15 +54,16 @@
 
             <table class="table table-striped">
                 <thead class="thead-light">
-                    <tr>
-                        <th scope="col">Name</th>
-                        <th scope="col">E-Mail</th>
-                        <th scope="col">Geburtsdatum</th>
-                    </tr>
+
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">E-Mail</th>
+                    <th scope="col">Geburtsdatum</th>
+                </tr>
                 </thead>
                 <tbody id="tableBodyData">
 
-                    <?php
+                <?php
                 require "lib/func.inc.php";
                 if (isset($_POST['search']) && $_POST['search'] != "") {
                     if (getFilteredData($_POST['search']) == null) {
@@ -65,6 +72,7 @@
                     } else{
                     printAllData(getFilteredData($_POST['search']));
                     }
+
                 }
                 elseif (isset($_POST['search']) && $_POST['search'] == "") {
                     echo "<div class='alert alert-danger'>" . "Bitte machen Sie eine Eingabe zum Suchen!". "</div>";
