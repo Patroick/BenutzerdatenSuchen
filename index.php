@@ -17,7 +17,7 @@
 </head>
 
 <?php
-$suche = isset($_POST['search']) ? $_POST['search'] : "";;
+$search = isset($_POST['search']) ? $_POST['search'] : "";;
 ?>
 
 <body>
@@ -33,7 +33,7 @@ $suche = isset($_POST['search']) ? $_POST['search'] : "";;
                 <div class="col-sm-4 form-group">
                     <input type="text"
                            name="search"
-                           value="<?= htmlspecialchars($suche) ?>"
+                           value="<?= htmlspecialchars($search) ?>"
                            class="form-control"
                             />
                 </div>
@@ -65,7 +65,12 @@ $suche = isset($_POST['search']) ? $_POST['search'] : "";;
                 require "lib/func.inc.php";
                 if (isset($_POST['search']) && $_POST['search'] != "") {
                     printAllData(getFilteredData($_POST['search']));
-                } else {
+                }
+                elseif (isset($_POST['search']) && $_POST['search'] == "") {
+                    echo "<div class='alert alert-danger'>" . "Bitte machen Sie eine Eingabe zum Suchen!". "</div>";
+                    printAllData(getAllData());
+                }
+                else {
                     printAllData(getAllData());
                 }
                 ?>

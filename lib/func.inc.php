@@ -4,6 +4,15 @@ $errors = [];
 
 require "data/userdata.php";
 
+function getAllData()
+{
+    global $data;
+    if (isset($data)) {
+        return $data;
+    } else {
+        return null;
+    }
+}
 
 function printAllData($allData){
     foreach ($allData as $singleData) {
@@ -16,21 +25,14 @@ function printAllData($allData){
     }
 }
 
-function getAllData()
-{
-    global $data;
-    if (isset($data)) {
-        return $data;
-    } else {
-        return null;
-    }
-}
 
 function getDataPerId($id)
 {
     foreach (getAllData() as $data) {
         if($id==$data['id']){
+
             $dataPerId = array("firstname"=>$data['firstname'],
+
                 "lastname"=>$data['lastname'],
                 "birthdate"=>$data['birthdate'],
                 "email"=>$data['email'],
@@ -44,14 +46,16 @@ function getDataPerId($id)
 function getFilteredData($filter)
 {
     $filterData = [];
-    foreach (getAllData() as $data) {
-        $foundFirstname = strpos($data['firstname'], $filter);
-        $foundLastname = strpos($data['lastname'], $filter);
-        $foundEmail = strpos($data['email'], $filter);
-        $foundBirthdate = strpos($data['birthdate'], $filter);
-        if ($foundFirstname !== false | $foundLastname !== false | $foundEmail !== false | $foundBirthdate !== false) {
-            $filterData[] = $data;
+
+
+        foreach (getAllData() as $data) {
+            $foundFirstname = strpos($data['firstname'], $filter);
+            $foundLastname = strpos($data['lastname'], $filter);
+            $foundEmail =  strpos($data['email'], $filter);
+            if ($foundFirstname !== false | $foundLastname !== false | $foundEmail !== false ) {
+                $filterData[] = $data;
+            }
         }
-    }
+
     return $filterData;
 }
