@@ -59,8 +59,18 @@
                     <?php
                 require "lib/func.inc.php";
                 if (isset($_POST['search']) && $_POST['search'] != "") {
+                    if (getFilteredData($_POST['search']) == null) {
+                        echo "<div class='alert alert-danger'>" . "Keine Daten gefunden!". "</div>";
+                        printAllData(getAllData());
+                    } else{
                     printAllData(getFilteredData($_POST['search']));
-                } else {
+                    }
+                }
+                elseif (isset($_POST['search']) && $_POST['search'] == "") {
+                    echo "<div class='alert alert-danger'>" . "Bitte machen Sie eine Eingabe zum Suchen!". "</div>";
+                    printAllData(getAllData());
+                }
+                else {
                     printAllData(getAllData());
                 }
                 ?>
