@@ -16,9 +16,8 @@
 
 </head>
 
-
 <?php
-
+$suche = isset($_POST['search']) ? $_POST['search'] : "";;
 ?>
 
 <body>
@@ -34,14 +33,15 @@
                 <div class="col-sm-4 form-group">
                     <input type="text"
                            name="search"
+                           value="<?= htmlspecialchars($suche) ?>"
                            class="form-control"
-                           required />
+                            />
                 </div>
                 <div class="col-sm-3 mb-3 d-grid">
                     <input type="submit"
                            name="searchbtn"
                            class="btn btn-primary btn-block"
-                           value="Suche">
+                           value="Suchen">
                 </div>
 
                 <div class="col-sm-3 mb-3 d-grid">
@@ -62,7 +62,12 @@
                 <tbody id="tableBodyData">
 
                 <?php
-
+                require "lib/func.inc.php";
+                if (isset($_POST['search']) && $_POST['search'] != "") {
+                    printAllData(getFilteredData($_POST['search']));
+                } else {
+                    printAllData(getAllData());
+                }
                 ?>
 
                 </tbody>
