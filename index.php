@@ -29,8 +29,8 @@
                 <div class="col-sm-4 form-group">
                     <input type="text"
                            name="search"
-                           class="form-control"
-                           required />
+                           value="<?= htmlspecialchars($suche) ?>"
+                           class="form-control" />
                 </div>
                 <div class="col-sm-3 mb-3 d-grid">
                     <input type="submit"
@@ -45,6 +45,29 @@
                 </div>
 
             </div>
+
+            <table class="table table-striped">
+                <thead class="thead-light">
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">E-Mail</th>
+                        <th scope="col">Geburtsdatum</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBodyData">
+
+                    <?php
+                require "lib/func.inc.php";
+                if (isset($_POST['search']) && $_POST['search'] != "") {
+                    printAllData(getFilteredData($_POST['search']));
+                } else {
+                    printAllData(getAllData());
+                }
+                ?>
+
+                </tbody>
+
+            </table>
         </form>
 
     </div>
