@@ -9,7 +9,7 @@ function printAllData($allData){
     foreach ($allData as $singleData) {
 
         echo "<tr>";
-        echo "<td> <a style='text-decoration: none' href='detail.php?id=" . $singleData['id'] . "'>" . $singleData['firstname'] . " ". $singleData['lastname'] . "</a></td>";
+        echo "<td> <a style='text-decoration: none' href='details.php?id=" . $singleData['id'] . "'>" . $singleData['firstname'] . " ". $singleData['lastname'] . "</a></td>";
         echo "<td>" . $singleData['email'] . "</td>";
         echo "<td>" . date("d.m.Y", strtotime($singleData['birthdate']))  . "</td>";
         echo "</tr>";
